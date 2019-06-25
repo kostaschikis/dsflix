@@ -1,0 +1,250 @@
+#main {
+    background-color: var(--dark-color);
+}
+
+#main .movie-about {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 3px solid #3d3d3d;
+}
+
+#main .movie-about .movie-cover {
+    padding: 4rem 4rem 4rem 4rem; 
+}
+
+#main .movie-about .movie-cover img {
+    width: 25rem;
+    height: auto;
+}
+
+#main .movie-about .movie-cover h2 {
+   text-align: center;
+   padding: 1rem 0;
+   color: var(--light-color);
+}
+
+#main .movie-about .movie-info {
+    flex: 2;
+    /* align-content: center; */
+    /* justify-content: center; */
+    text-align: center;
+    padding: 0 5rem 1rem 5rem;
+}
+
+#main .movie-about .movie-info #movie-title {
+    padding: 1rem;
+}
+
+.movie-about .movie-info #movie-genre {
+    padding-top: 1rem;
+}
+
+.movie-about .movie-info #movie-desc {
+    padding: 1rem;
+    border-bottom: #7289da85 2px solid;
+    border-top: #7289da85 2px solid;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.movie-about .movie-info #movie-details {
+    color: var(--primary-color);
+}
+
+.movie-about .movie-info #movie-details strong {
+    color: var(--light-color);
+}
+
+.movie-about .movie-info #movie-director {
+    padding: 1rem;
+    /* text-align: start; */
+}
+
+.movie-about .movie-info #movie-date {
+    padding: 0 1rem 1rem 1rem;
+    /* text-align: start; */
+}
+
+.movie-about .movie-info #movie-length {
+    padding: 1rem
+}
+
+/* Comment Section */
+#main .comment-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 1rem;
+}
+
+.comment {
+    display: flex;
+}
+
+.fa.fa-star.checked {
+    color: var(--primary-color);
+}
+
+.comment .user-rating {
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.comment p {
+    padding: 1.5rem;
+    background-color: rgba(255,255,255,.1);
+    color: hsla(0, 0%, 100%, 0.88);
+}
+
+.comment .info {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    margin-right: 0.2rem;
+    justify-content: center;
+    width: 10rem;
+}
+
+.comment .info a {
+    white-space: nowrap;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Write Comment */
+.write-new form {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+.write-new .counter {
+    align-self: center;
+}
+
+.write-new {
+    align-self: center;
+}
+
+.write-new textarea {
+    padding: 1.5rem;
+    margin-top: 0.5rem;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-family: 'Arial', 'sans serif';
+    font-size: 1rem;
+    resize: none;
+}
+
+.write-new textarea:disabled {
+   background-color: rgba(255,255,255,.1);
+   color: #999;
+   border: 1px #999 solid;
+}
+
+.write-new .form-rating {
+    padding: 0.75rem 0.75rem 0.3rem 0;
+    position: relative;
+    margin: 0;
+    /* left: -13.5rem; */
+}
+
+.write-new .btn {
+    margin-top: 0.5rem;
+}
+
+/* Form Enabled */
+.form-rating:not(:checked) > input {
+    display: none;
+}
+
+.form-rating:not(:checked) > label {
+    float: right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+
+.form-rating:not(:checked) > label:before {
+    content: '★ ';
+}
+
+.form-rating > input:checked ~ label {
+    color: var(--primary-color);    
+}
+
+.form-rating:not(:checked) > label:hover,
+.form-rating:not(:checked) > label:hover ~ label {
+    color: var(--primary-color); 
+}
+
+.form-rating > input:checked + label:hover,
+.form-rating > input:checked + label:hover ~ label,
+.form-rating > input:checked ~ label:hover,
+.form-rating > input:checked ~ label:hover ~ label,
+.form-rating > label:hover ~ input:checked ~ label {
+    color: #7289daa1;   
+}
+
+/* Form Disabled */
+.form-rating.disabled > input ~ label {
+    color: #ccc;
+}
+
+.form-rating.disabled:not(:checked) > label:hover,
+.form-rating.disabled:not(:checked) > label:hover ~ label {
+    color: #ccc;
+    cursor: default;
+}
+
+.form-rating.disabled > input:checked + label:hover,
+.form-rating.disabled > input:checked + label:hover ~ label,
+.form-rating.disabled > input:checked ~ label:hover,
+.form-rating.disabled > input:checked ~ label:hover ~ label,
+.form-rating.disabled > label:hover ~ input:checked ~ label {
+    color: #ccc;
+}
+
+.footer-register {
+    margin-top: 0;
+}
+
+@media (max-width: 960px) {
+    #main .movie-about .movie-cover {
+        display: none;
+    }
+
+    .comment.user-comment .info{
+        order: 1;
+    }
+
+    .comment.user-comment p{
+        order: 2;
+    }
+
+    /* Make the paragraph in the comments take up the whole width,
+    forcing the avatar and user info to wrap to the next line*/
+    .comment p{
+        width: 100%;
+    }
+
+    /* Align toward the beginning of the container (to the left)
+    all the elements inside the author comments. */
+    .comment {
+        justify-content: flex-start;
+    }
+
+    .write-new {
+        margin: 0.75rem;
+    }
+
+    .write-new .form-rating {
+        text-align: center;
+
+    }
+}
+

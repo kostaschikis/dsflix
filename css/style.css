@@ -1,0 +1,762 @@
+/* Global Styles */
+:root {
+	--primary-color: #7289da;
+	--dark-color: #141414;
+    --light-color: #fff;
+    --gutter: 20px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Arial', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background: #000;
+	color: #999;
+}
+
+ul {
+	list-style: none;
+}
+
+h1, h2, h3, h4 {
+	color: #fff;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+p {
+	margin: 0.5rem 0;
+}
+
+img {
+	width: 100%;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  opacity: 0;
+  margin: 0; 
+}
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* Navbar */
+nav {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+   justify-content: space-between;
+   position: fixed;
+   z-index: 3;
+}
+
+nav a {
+	margin: 1rem 1rem;
+	/* size: 0.4rem; */
+}
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* Side Nav Menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 3; /* Stay on top */
+    top: 0; 
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.9); /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+	transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+  
+/* The navigation menu links */
+.sidenav a { 
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: var(--light-color);
+	display: block;
+	transition: 0.3s;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.sidenav a.user {
+	text-align: center;
+	padding: 0;
+	padding-bottom: 1rem;
+	border-bottom: 2px solid #3d3d3d;
+}	
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+	color: var(--primary-color);
+}
+
+/* Navigation Menu Icons */
+.sidenav a img {
+    width: 30px;
+    height: auto;
+}
+
+/* Hide Logout */
+.sidenav #categories {
+	margin-left: 1.5rem;
+	margin-top: 0.5rem;
+}
+
+.sidenav #categories a {
+	box-shadow: none;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+	position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+	margin-left: 50px;
+	box-shadow: none;
+}
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+#main {
+    transition: margin-left .5s;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* Showcase */
+.showcase {
+	width: 100%;
+	height: 93vh;
+	position: relative;
+	background: url('../img/background\ 2.jpg') no-repeat center center/cover;
+}
+
+.showcase-register {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	background: url('../img/background\ 3.jpg') no-repeat center center/cover;
+}
+
+.showcase::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.3);
+	box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+.showcase-register::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background: rgba(0, 0, 0, 0.5);
+	box-shadow: inset 120px 100px 250px #000000, inset -120px -100px 250px #000000;
+}
+
+.showcase-top {
+	position: relative;
+	z-index: 2;
+	height: 90px;
+}
+
+.showcase-top-left {
+    position: absolute;
+    top: 3%;
+    z-index: 3;
+    margin-left: 2rem;
+}
+
+div.menu-icon {
+    width: 35px;
+    height: 5px;
+    background-color: var(--primary-color);
+    margin: 6px 0;
+	z-index: 3;
+}
+
+.showcase-top img {
+	width: 170px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin-left: 0;
+}
+
+.showcase-top a {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translate(-50%, -50%);
+}
+
+.showcase-content {
+	position: relative;
+	z-index: 2;
+	width: 65%;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin-top: 9rem;
+}
+
+.showcase-content h1 {
+	font-weight: 700;
+	font-size: 5.2rem;
+	line-height: 1.1;
+	margin: 0 0 2rem;
+}
+
+.showcase-content p {
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 400;
+	font-size: 1.9rem;
+	line-height: 1.25;
+	margin: 0 0 2rem;
+}
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* The Sign In Modal (background) */
+.modal {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 2; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	padding-top: 5rem;
+}
+  
+/* Modal Content/Box */
+.login-content {
+	background-color: #141414fd;
+	margin: 5px auto; /* 15% from the top and centered */
+	border:  3px solid #3d3d3d;
+	width: 33rem; 
+	height: auto;
+	padding: 2rem;
+}
+
+/* Log In Style */
+.login-container {
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	padding: 3rem;
+	border-bottom: #7289da86 1px solid;
+	margin-bottom: 1rem;
+}
+
+.login-container .cr-group{
+	margin-bottom: 1rem;
+}
+
+.login-container .cr-group .label,
+.login-container .cr-group .input,
+.login-container .cr-group .button{
+	width: 100%;
+	color: var(--light-color);
+	display: block;
+}
+
+.login-container .cr-group .input,
+.login-container .cr-group .button{
+	border:none;
+	padding: 15px 20px;
+	border-radius:25px;
+	background:rgba(255,255,255,.1);
+	font-size:1.1rem;
+}
+
+.login-container .cr-group p {
+	text-align: center;
+	color: var(--light-color);
+}
+
+.login-container .cr-group input[data-type="password"]{
+	-webkit-text-security:circle;
+}
+
+.login-container input[type=checkbox] {
+	margin-left: 0.5rem;
+}
+
+.login-container .cr-group .label{
+	color: var(--light-color);
+	font-size:1.2rem;
+	margin: 0 0 0.3rem 0.5rem;
+}
+
+.login-container .cr-group .button{
+	background: var(--primary-color);
+	-webkit-transition: background 0.3s;
+	transition: background 0.3;
+}
+
+.login-container .cr-group .button:hover {
+	cursor: pointer;
+	background: #7289dab0;
+}
+
+
+.misc-container {
+	text-align: center;
+}
+
+.misc-container a {
+	-webkit-transition: color 0.3s;
+	transition: color 0.3s
+}
+
+.misc-container a:hover {
+	color: var(--primary-color);
+}
+  
+/* The Close Button */
+.close {
+	/* Position it in the top right corner outside of the modal */
+	position: absolute;
+	right: 25px;
+	top: 0;
+	color: var(--light-color);
+	font-size: 35px;
+	font-weight: bold;
+}
+  
+/* Close button on hover */
+.close:hover,
+.close:focus {
+	color: var(--primary-color);
+	cursor: pointer;
+}
+
+.animate {
+	-webkit-animation: animatezoom 0.2s;
+	animation: animatezoom 0.2s
+}
+  
+@-webkit-keyframes animatezoom {
+	from {-webkit-transform: scale(0)}
+	to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+	from {transform: scale(0)}
+	to {transform: scale(1)}
+}
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* Sign Up Form */
+#sign-up.showcase-content {
+	position: relative;
+	z-index: 2;
+	width: 65%;
+	margin: auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: start;
+	height: 100vh;
+	resize: both;
+}
+
+#sign-up .login-content {
+	background-color: #141414ee;
+	margin: 5px auto; /* 15% from the top and centered */
+	border: 3px solid #3d3d3d;
+	width: 33rem; 
+	height: auto;
+	padding: 1.2rem;
+	margin-top: 2rem;	
+}
+
+#sign-up .login-container {
+	min-height:345px;
+	position:relative;
+	perspective:1000px;
+	transform-style:preserve-3d;
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	justify-content: center;
+	padding: 1rem 2rem 0.3rem 2rem;
+	border-bottom: none;
+	margin-bottom: 0;
+}
+
+#sign-up .login-container h2 {
+	border-bottom: #7289da86 1px solid;
+	padding-bottom: 0.75rem;
+	margin-bottom: 1rem;
+	text-align: center;
+	font-size: 2rem;
+}
+
+#sign-up .login-container > div.cr-group label[for="user"] {
+	padding-top: 1.2rem;
+	border-top: #7289da86 1px solid;
+}
+
+#sign-up .login-container > div:last-child {
+	padding-bottom: 1.2rem;
+	border-bottom: #7289da86 1px solid;
+}
+
+#sign-up .misc-container a {
+	color: var(--primary-color);
+}
+
+#sign-up .misc-container a:hover {
+	color: var(--light-color);
+}
+
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* Movie Tabs */
+.movie-tabs {
+	background: var(--dark-color);
+    padding-top: 1rem;
+	border-bottom: 3px solid #3d3d3d;
+	border-right: none;
+}
+
+.movie-tabs .container {
+	display: grid;
+	grid-gap: 0.7rem;
+    grid-template-columns: repeat(10, 26rem);
+    grid-template-rows: minmax(150px, 1fr);
+    overflow-x: scroll;
+    scroll-snap-type: x proximity;
+    padding-bottom: calc(.75 * var(--gutter));
+	align-items: center;
+    text-align: center;
+    padding-right: 0px 20px;
+}
+
+.movie-tabs p {
+	font-size: 1.2rem;
+	padding-top: 0.5rem;
+}
+
+.movie-tabs .container > div {
+	padding: 1.5rem 0;
+}
+
+.movie-tabs .container > div > img:hover {
+	color: #fff;
+	cursor: pointer;
+}
+
+.tab-border {
+	border-bottom: var(--primary-color) 4px solid;
+}
+
+.movie-item {
+    scroll-snap-align: center;
+    /* padding: calc(var(--gutter) / 2 * 1.5); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* Dropdown */
+.dropbtn {
+    /* background-color: var(--primary-color); */
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+/* .dropdown {
+    position: relative;
+    display: inline-block;
+} */
+
+/* Dropdown Content (Hidden by Default) */
+div.search {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdown-content {
+	display: none;
+	background: rgba(51, 51, 51, 0.151);
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	border-radius: 12px;
+	max-width: 12rem;
+	z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+	color: var(--primary-color);
+    padding: 12px 16px;
+	text-decoration: none;
+	margin-left: 1.5rem;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {color: var(--light-color)}
+
+/* Show the dropdown menu on hover */
+.dropdown:focus .dropdown-content {
+  display: block;
+}
+  
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: var(--primary-color);
+}
+
+p.error, .login-container p.error {
+	font-size: 1.2rem;
+	text-transform: none;
+	color: red;
+	text-align: center;
+	margin: 0;
+}
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------------------------------------- */
+/* Footer */
+.footer {
+	max-width: 70%;
+	margin: 1rem auto;
+	overflow: auto;
+}
+
+.footer,
+.footer a {
+	color: #999;
+	font-size: 0.9rem;
+}
+
+.footer p {
+	margin-bottom: 1.5rem;
+}
+
+.footer .footer-cols {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 2rem;
+}
+
+.footer li {
+	line-height: 1.9;
+}
+
+.footer .lang-select {
+	margin-top: 2rem;
+	color: #999;
+	background-color: #000;
+	background-image: none;
+	border: 1px solid #333;
+	padding: 1rem 1.2rem;
+	border-radius: 5px;
+}
+
+.footer-register {
+	padding: 1rem;
+	text-align: center;
+	z-index: 2;
+	margin-top: 3rem;
+}
+/* ----------------------------------------------------------------------------------------------------------------- */
+
+/* Container */
+.container {
+	max-width: 80%;
+    margin: auto;
+	overflow: hidden;
+	padding: 0 2rem;
+}
+
+/* Text Styles */
+.text-xl {
+	font-size: 2rem;
+}
+
+.text-lg {
+	font-size: 1.8rem;
+	margin-bottom: 1rem;
+}
+
+.text-md {
+	font-size: 1.2rem;
+	margin-bottom: 1.5rem;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.text-dark {
+	color: #999;
+}
+
+/* Buttons */
+.btn {
+	display: inline-block;
+	background: var(--primary-color);
+	color: #fff;
+	padding: 0.4rem 1.3rem;
+	font-size: 1rem;
+	text-align: center;
+	border: none;
+	cursor: pointer;
+	margin-right: 0.5rem;
+	transition: opacity 0.2s ease-in;
+	outline: none;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+	border-radius: 2px;
+}
+
+.btn:hover {
+	opacity: 0.9;
+}
+
+.btn-rounded {
+	border-radius: 5px;
+}
+
+.btn-xl {
+	font-size: 2rem;
+	padding: 1.5rem 2.1rem;
+    text-transform: uppercase;
+    border-radius: 12px;
+}
+
+.btn-lg {
+	font-size: 1rem;
+	padding: 0.8rem 1.3rem;
+	text-transform: uppercase;
+}
+
+.btn-icon {
+	margin-left: 1rem;
+}
+
+.resize {
+    width: 300px;
+    height: auto;
+}
+
+
+@media (max-width: 960px) {
+
+	.showcase {
+	    height: 80vh;
+	}
+
+	.showcase .showcase-top img {
+		display: none;
+	}
+
+	.dropdown-content {
+		text-align: center;
+	}
+
+	.dropdown-content a {
+		margin: 0;
+	}
+
+	.hide-sm {
+		display: none;
+	}
+
+	.showcase-top img {
+		top: 30%;
+		left: 5%;
+		transform: translate(0);
+	}
+
+	.showcase-content h1 {
+		font-size: 3.7rem;
+		line-height: 1;
+	}
+
+	.showcase-content p {
+		font-size: 1.5rem;
+	}
+
+	.footer .footer-cols {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.footer-register {
+		display: none;
+	}
+
+	.sidenav a {
+		box-shadow: none;
+	}
+
+	.btn-xl {
+		font-size: 1.5rem;
+		padding: 1.4rem 2rem;
+		text-transform: uppercase;
+	}
+
+	.text-xl {
+		font-size: 1.5rem;
+	}
+
+	.text-lg {
+		font-size: 1.3rem;
+		margin-bottom: 1rem;
+	}
+
+	.text-md {
+		margin-bottom: 1rem;
+		font-size: 1.2rem;
+	}
+}
+

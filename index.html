@@ -1,0 +1,224 @@
+<?php session_start();?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <!-- Style -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
+    <title>DSFLIX</title>
+</head>
+    <?php 
+        if(isset($_GET["error"])) {
+            echo "<body onload='scrollFix(), checkBrowserSize(), openLogin()'>";
+        } else {
+            echo "<body onload='scrollFix(), checkBrowserSize()'>";
+        }    
+    ?>
+    <!-- Sidebar Navigation Menu -->
+    <nav>
+        <a href="#" onclick="openNav()" >
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+            <div class="menu-icon"></div>
+        </a>
+    </nav>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <?php
+            // User Name
+            if(isset($_SESSION["logStatus"])) {
+                if($_SESSION["logStatus"] == true) {
+                    echo "<a href='#' class='user'><i class='fas fa-user'></i> " . $_SESSION['Username'] . "</a>";
+                }
+            }
+        ?>
+        <a href="./index.html"><i class="fa fa-fw fa-home"></i> Home</a>
+        <a href="#" onclick="showCategories()" class="dropdown dropbtn"><i class="fa fa-list-alt "></i> Categories</a>
+            <div id="categories" class="dropdown-content">
+                <a href="./php/category.php?category=Action">Action</a>
+                <a href="./php/category.php?category=Fantasy">Fantasy</a>
+                <a href="./php/category.php?category=Sci-Fi">Sci-fi</a>
+                <a href="./php/category.php?category=Horror">Horror</a>
+                <a href="./php/category.php?category=Mystery">Mystery</a>
+                <a href="./php/category.php?category=Documentary">Documentary</a>
+            </div>
+        <?php
+            // Logout Button
+            if(isset($_SESSION["logStatus"])) {
+                if($_SESSION["logStatus"] == true) {
+                    echo "<a href='./php/logout.php'><i class='fas fa-sign-out-alt'></i> Logout</a>";
+                }
+            }
+        ?>
+    </div>
+    <div id="main">
+         <!-- Showcase -->
+        <header class="showcase">
+            <div class="showcase-top">
+                <img src="./img/logo2.png"/>
+                <?php
+                    if(!isset($_SESSION["logStatus"])) {
+                        echo "<a href='#' class='btn btn-rounded' onclick='openLogin()'>Sign in</a>";
+                    }  
+                ?>
+            </div>
+            <div class="showcase-content">
+                <?php 
+                    if(!isset($_SESSION["logStatus"])) {
+                        echo "<h1>See what's next</h1>";
+                        echo "<p>Watch anywhere. Cancel Anytime</p>";
+                    } else {
+                        echo "<h1>Welcome Back</h1>";
+                        echo "<p>Watch anywhere. Cancel Anytime</p>";
+                    }
+                ?>
+                <?php 
+                    if(!isset($_SESSION["logStatus"])) {
+                        echo "<a href='./php/register_page.php' class='btn btn-xl'>
+                            SIGN UP FOR FREE
+                        </a>";
+                    } 
+                ?>
+            </div>
+        </header>
+
+        <!-- Log In Modal -->
+        <section id="log-in" class="modal">
+            <span onclick="closeLogin()"
+            class="close" title="Close Modal">&times;</span>
+
+            <form class="login-content animate" action="./php/login_page.php" method="POST">
+                <div class="login-container">
+                    <div class="cr-group">
+                        <p class="text-xl">Welcome Back!</p>
+                        <?php 
+                            if(isset($_GET["error"])) {
+                                if($_GET["error"] == "wrongpass") {
+                                    echo "<p class='error text-md'> Wrong Password, Try Again</p>";
+                                } else if ($_GET["error"] == "nouser") {
+                                    echo "<p class='error text-md'> Username Does Not Exist</p>";
+                                }
+                            }    
+                        ?>
+                    </div>
+                    <div class="cr-group">
+                        <label for="username" class="label">Username</label>
+                        <input name="username" type="text" class="input" required>
+                    </div>
+                    <div class="cr-group">
+                        <label for="password" class="label">Password</label>
+                        <input name="password" type="password" class="input" data-type="password" required>
+                    </div>
+                    <div class="cr-group">
+                        <input type="submit" name="submit-signin" class="button" class="btn" value="Sign In">
+                    </div> 
+                    <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me<br>
+                    </label>
+                </div>
+                <div class="misc-container">
+                <span class="psw" class="text-md">New To DSflix?<a href="./php/register_page.php" class="text-md"> Sign Up Now</a></span>
+                </div>
+            </form>
+            
+        </section>
+
+        <!-- Movie Showcase -->
+        <section class="movie-tabs">
+            <div class="container full" id="movie-section">
+                <div class="movie-item tab-border">
+                    <a id="the frame" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/theframe.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border">
+                    <a id="inception" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/inception.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border">
+                    <a id="enemy" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/enemy.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border">
+                    <a id="interstellar" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/interstellar.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border">
+                    <a id="lotr" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/lotr.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border">
+                    <a id="hobbit" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/hobbit.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border" >
+                    <a id="john wick" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/johnwick.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border" >
+                    <a id="unacknownledged" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/unacknownledged.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border">
+                    <a id="it chapter two" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/itchaptertwo.jpg">
+                    </a>
+                </div>
+                <div class="movie-item tab-border">
+                    <a id="the conjuring" onclick="getMovieInfo(id)">
+                        <img class="resize" src="./img/covers/theconjuring.jpg">
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Questions? Call 1-866-579-7172</p>
+            <div class="footer-cols">
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Investor Relations</a></li>
+                    <li><a href="#">Ways To Watch</a></li>
+                    <li><a href="#">Corporate Information</a></li>
+                    <li><a href="#">Netflix Originals</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Jobs</a></li>
+                    <li><a href="#">Terms Of Use</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Account</a></li>
+                    <li><a href="#">Redeem Gift Cards</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Speed Test</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Media Center</a></li>
+                    <li><a href="#">Buy Gift Cards</a></li>
+                    <li><a href="#">Cookie Preferences</a></li>
+                    <li><a href="#">Legal Notices</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
+
