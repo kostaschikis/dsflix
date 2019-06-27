@@ -87,7 +87,7 @@
                             <input name="pass" type="password" class="input" data-type="password" required>
                         </div>
                         <div class="cr-group">
-                            <input type="submit" name="submit-signup" class="button" class="btn" value="SignUp">
+                            <input type="submit" name="submit-signup" class="button" class="btn" value="Sign Up">
                         </div> 
                     </div>  
                     <div class="misc-container">
