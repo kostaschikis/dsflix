@@ -8,7 +8,6 @@
         $movieCategory = $_GET["category"];
         $_SESSION["movieCategory"] = $movieCategory;
         $sqlMovies = "SELECT * FROM `dsflix`.`movies` WHERE `genre` = '$movieCategory'";
-        // $sqlRating = "SELECT AVG(rating) FROM `ratings_comments` WHERE movie_title = '$movie' AND rating > 0";
     } 
     $resultMovies = $conn->query($sqlMovies);
 ?>

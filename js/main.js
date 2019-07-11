@@ -10,6 +10,7 @@ window.addEventListener('resize', () => {
   }
 });
 
+// Info Box On Hover
 function checkImg() {
   const movies = document.getElementById('movies');
   for(let movie of movies.children) {
@@ -40,7 +41,6 @@ function checkBrowserSize() {
 /* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
-  // document.getElementById("main").style.marginLeft = "250px";
   document.querySelector("nav a").style.display = "none";
 }
 
@@ -61,6 +61,7 @@ function scrollFix() {
   movies.scrollLeft = 100;
 }
 
+// Show movie categories
 function showCategories() {
   let cat = document.querySelector('.dropdown-content');  
   if (cat.style.display == "" || cat.style.display == "none") {
@@ -86,11 +87,6 @@ function checkVal() {
       clicks++;
     }
   });
-
-  // if (clicks == 0) {
-  //   window.alert("Please Give A Rating!")
-  //   event.preventDefault();
-  // } 
 }
 
 // Login Modal Window

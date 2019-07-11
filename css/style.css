@@ -276,10 +276,10 @@ div.menu-icon {
 
 /* Log In Style */
 .login-container {
-	min-height:345px;
-	position:relative;
-	perspective:1000px;
-	transform-style:preserve-3d;
+	min-height: 345px;
+	position: relative;
+	perspective: 1000px;
+	transform-style: preserve-3d;
 	display: flex;
 	flex-direction: column;
 	align-content: center;
@@ -302,12 +302,12 @@ div.menu-icon {
 }
 
 .login-container .cr-group .input,
-.login-container .cr-group .button{
+.login-container .cr-group .button {
 	border:none;
 	padding: 15px 20px;
-	border-radius:25px;
+	border-radius: 25px;
 	background:rgba(255,255,255,.1);
-	font-size:1.1rem;
+	font-size: 1.1rem;
 }
 
 .login-container .cr-group p {
@@ -315,21 +315,21 @@ div.menu-icon {
 	color: var(--light-color);
 }
 
-.login-container .cr-group input[data-type="password"]{
-	-webkit-text-security:circle;
+.login-container .cr-group input[data-type="password"] {
+	-webkit-text-security: circle;
 }
 
 .login-container input[type=checkbox] {
 	margin-left: 0.5rem;
 }
 
-.login-container .cr-group .label{
+.login-container .cr-group .label {
 	color: var(--light-color);
 	font-size:1.2rem;
 	margin: 0 0 0.3rem 0.5rem;
 }
 
-.login-container .cr-group .button{
+.login-container .cr-group .button {
 	background: var(--primary-color);
 	-webkit-transition: background 0.3s;
 	transition: background 0.3;
@@ -546,7 +546,7 @@ div.search {
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {color: var(--light-color)}
 
-/* Show the dropdown menu on hover */
+/* Show the dropdown menu on focus */
 .dropdown:focus .dropdown-content {
   display: block;
 }

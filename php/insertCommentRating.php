@@ -14,7 +14,6 @@
         $comment = $_POST['comment'];
     } else {
         $comment = "";
-        echo "Error Retrieving The Comment ";
     }
 
     // Get Username & Movie

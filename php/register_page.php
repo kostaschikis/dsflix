@@ -57,7 +57,6 @@
                                 }
                             }
                         ?>
-                        <!-- <hr> -->
                         <div class="cr-group">
                             <label for="firstname" class="label">Name</label>
                             <input name="firstname" type="text" class="input" required>

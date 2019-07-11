@@ -15,7 +15,6 @@
     // Find The Movie in DB & Fetch Info
     $result = $conn->query($sqlMovie);
     $avgRating = $conn->query($sqlRating);
-    // print_r($result->fetch_assoc());
     if($result->num_rows > 0){
         while($row = $result->fetch_assoc()) {
             $title =  $row["title"];
