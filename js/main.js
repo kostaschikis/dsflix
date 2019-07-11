@@ -111,7 +111,4 @@ function closeLogin() {
   document.getElementById('log-in').style.display ='none';
 }
 
-function helo() {
-  console.log('all ok');
-}
 
