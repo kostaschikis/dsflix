@@ -29,3 +29,10 @@ A webpage like Imdb but with a Netflix design made with :
 
 ## Comment & Rate Movies ⭐ 
 ![comment_rate](https://github.com/KostasXikis/dsflix/blob/master/Demo%20Gifs/Comment.gif)
+
+## What I Learned
+* PHP Code
+* Managing Session with PHP
+* Complete Register & Login Systems
+* Database Interaction with PHP
+* Secure User Account Management
