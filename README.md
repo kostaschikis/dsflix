@@ -35,4 +35,4 @@ A webpage like Imdb but with a Netflix design made with :
 * Session Management with PHP
 * Complete Register & Login Systems
 * Database Interaction with PHP
-* Secure User Account Management
+* Secure User Password Management
