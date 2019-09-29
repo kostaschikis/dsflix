@@ -1,12 +1,13 @@
-# DSFLIX
+# [DSFLIX](https://dsflix-kostasxikis.000webhostapp.com/)
 A webpage like Imdb but with a Netflix design made with :
 * HTML5
 * CSS3
 * Vanilla Javascript
 * PHP
 * MySQL
-- [ ] Mobile Responsive: 80%
+- [ ] Mobile Responsive: 80% <br>
 
+*Warning: Page is slow, i am optimizing it*
 
 ## Installation with XAMPP
 1. Start Apache and MySQL modules in XAMPP
