@@ -11,6 +11,7 @@
     <!-- Style -->
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" media="screen and (max-width:768px)" href="../css/mobile.css">
+    <link rel="shortcut icon" href="./img/favicon.png">
     <title>DSFLIX | REGISTER</title>
 </head>
 <body onload="scrollFix(), checkBrowserSize()">

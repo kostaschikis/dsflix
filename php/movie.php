@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/movie.css">
     <link rel="stylesheet" media="screen and (max-width:768px)" href="../css/mobile.css">
+    <link rel="shortcut icon" href="./img/favicon.png">
     <title>Movie | Info</title>
 </head>
 <body onload="checkBrowserSize()">

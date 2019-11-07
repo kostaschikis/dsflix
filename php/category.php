@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../css/movie.css">
     <link rel="stylesheet" href="../css/category.css">
     <link rel="stylesheet" media="screen and (max-width:768px)" href="../css/mobile.css">
+    <link rel="shortcut icon" href="./img/favicon.png">
     <title>DSFLIX | Category</title>
 </head>
 <body onload="checkBrowserSize(), checkImg()">
@@ -98,10 +99,10 @@
                         // Display The Movie Info Box
                         echo"<div class='movie'>
                                 <a href='./movie.php?movieName=$title'>
-                                    <img src='../img/covers/$strippedTittle.jpg' class='resize'>
+                                    <img src='../img/covers/$strippedTittle.webp' class='resize'>
                                 </a>
                                 <div id='info-box'>
-                                    <img src='../img/covers/$strippedTittle.jpg' class='resize'>
+                                    <img src='../img/covers/$strippedTittle.webp' class='resize'>
                                     <div id='misc'>
                                         <p class='review'>$desc</p>
                                         <div id='movie-rating'>

@@ -45,7 +45,7 @@
 
         // Movie Cover Image
         echo "<div class='movie-cover'>";
-            echo "<img src='../img/covers/$stripped.jpg'>";
+            echo "<img src='../img/covers/$stripped.webp'>";
         echo "</div>";
         echo "<div class='movie-info'>";
 
